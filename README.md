@@ -15,6 +15,7 @@ Initializing and Managing State: React's useState hook is used to manage compone
 
 Audio Handling:
 Stream Capture: Using the navigator.mediaDevices.getUserMedia API to capture audio from the user's device.
+
 Audio Output: An audio HTML element is used to output the stream, which can handle both local and remote streams.
 Peer-to-Peer Communication:
 Connection Setup: SimplePeer is instantiated with the local stream and configuration to either initiate or join a streaming session.
