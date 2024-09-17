@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The "AudioStream" project is a web-based application built using React. It provides a platform for users to stream audio in real-time between two parties, potentially useful for situations such as online interviews, remote learning sessions, or just casual conversations where direct audio streaming is required.
 
-## Available Scripts
+Tools and Libraries Used
 
-In the project directory, you can run:
+React: A JavaScript library for building user interfaces, providing a responsive and dynamic experience.
+SimplePeer: A simple WebRTC peer-to-peer communication library, used for handling real-time audio streaming between peers.
+Web Audio API: Utilized for audio manipulation capabilities, such as applying audio filters.
+CSS: For styling the application to make it visually appealing and user-friendly.
 
-### `npm start`
+Approach
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Initializing and Managing State: React's useState hook is used to manage component states such as the peer connection, streaming status, audio input devices, and filter status.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Audio Handling:
+Stream Capture: Using the navigator.mediaDevices.getUserMedia API to capture audio from the user's device.
+Audio Output: An audio HTML element is used to output the stream, which can handle both local and remote streams.
+Peer-to-Peer Communication:
+Connection Setup: SimplePeer is instantiated with the local stream and configuration to either initiate or join a streaming session.
+Signal Handling: Peers exchange signaling data necessary for establishing a direct connection.
+Audio Manipulation:
+Context and Nodes: The Web Audio API is used to create an audio context and nodes such as GainNode and BiquadFilter to apply audio effects.
+Filter Application: Users can toggle audio filters on and off, modifying the audio stream in real-time.
 
-### `npm test`
+Challenges Encountered
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cross-Browser Compatibility: Ensuring that the application works seamlessly across different browsers, especially with the nuances of the Web Audio API and WebRTC.
+Audio Latency: Minimizing the delay in audio streaming is crucial for real-time applications, requiring optimization of stream handling.
+UI Responsiveness: Designing a user interface that is both functional and responsive, adapting to various device screens.
 
-### `npm run build`
+Conclusion
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The focus of the project has been on creating a modular and maintainable codebase, adhering to modern JavaScript practices. By isolating functionality into reusable components and hooks, the code remains organized and easy to manage. Each part of the application, from audio input selection to peer connection handling, is designed to operate independently yet cohesively, ensuring that enhancements and maintenance can be carried out with minimal impact on other areas of the application.
