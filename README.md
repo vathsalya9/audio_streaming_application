@@ -2,6 +2,9 @@ Project Overview
 
 The "AudioStream" project is a web-based application built using React. It provides a platform for users to stream audio in real-time between two parties, potentially useful for situations such as online interviews, remote learning sessions, or just casual conversations where direct audio streaming is required.
 
+<img width="956" alt="image" src="https://github.com/user-attachments/assets/ad673334-8a86-4899-b644-c0479f930eda">
+
+
 Tools and Libraries Used
 
 React: A JavaScript library for building user interfaces, providing a responsive and dynamic experience.
@@ -14,20 +17,28 @@ Approach
 Initializing and Managing State: React's useState hook is used to manage component states such as the peer connection, streaming status, audio input devices, and filter status.
 
 Audio Handling:
+
 Stream Capture: Using the navigator.mediaDevices.getUserMedia API to capture audio from the user's device.
 
 Audio Output: An audio HTML element is used to output the stream, which can handle both local and remote streams.
+
 Peer-to-Peer Communication:
+
 Connection Setup: SimplePeer is instantiated with the local stream and configuration to either initiate or join a streaming session.
 Signal Handling: Peers exchange signaling data necessary for establishing a direct connection.
+
 Audio Manipulation:
+
 Context and Nodes: The Web Audio API is used to create an audio context and nodes such as GainNode and BiquadFilter to apply audio effects.
+
 Filter Application: Users can toggle audio filters on and off, modifying the audio stream in real-time.
 
 Challenges Encountered
 
 Cross-Browser Compatibility: Ensuring that the application works seamlessly across different browsers, especially with the nuances of the Web Audio API and WebRTC.
+
 Audio Latency: Minimizing the delay in audio streaming is crucial for real-time applications, requiring optimization of stream handling.
+
 UI Responsiveness: Designing a user interface that is both functional and responsive, adapting to various device screens.
 
 Conclusion
